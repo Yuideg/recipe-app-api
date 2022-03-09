@@ -1,0 +1,17 @@
+Got permission denied while trying to connect to the Docker daemon socket
+sudo newgroup docker
+sudo chmod 666 /var/run/docker.sock
+sudo usermod -aG docker ${USER}
+export docker host 
+  -export DOCKER_HOST=127.0.0.1:8000
+restart docker services
+  - service docker restart
+show docker status
+  - sudo service docker status
+to create new venv follow these rules
+    - python3 -m pip install --user virtualenv
+    - python3 -m venv env
+    - source env/bin/activate
+    - deactivate
+create new django project on docker compose 
+    - sudo docker-compose run web sh -c "django-admin startproject django_app ."
